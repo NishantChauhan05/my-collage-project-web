@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COSMOS HOSPITAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 COSMOS HOSPITAL</h1>
+    <p>Hospital Appointment System</p>
+
+    <div class="hospital-stats">
+        <div>
+            <h3>50+</h3>
+            <p>Doctors</p>
+        </div>
+
+        <div>
+            <h3>1000+</h3>
+            <p>Patients</p>
+        </div>
+
+        <div>
+            <h3>24/7</h3>
+            <p>Emergency</p>
+        </div>
+
+        <div>
+            <h3>15+</h3>
+            <p>Departments</p>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#appointments">My Appointments</a>
+    <a href="#contact">Contact</a>
+    <button onclick="toggleDarkMode()">🌙</button>
+</nav>
+
+<section id="home" class="hero">
+    <h2>Welcome to Cosmos Hospital</h2>
+    <p>Your health is our first priority.</p>
+
+    <div class="hospital-image">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3"
+             alt="Hospital">
+    </div>
+</section>
+    <div class="emergency">
+        🚨 Emergency: <b>+91 7534827133</b> | Available 24/7
+    </div>
+
+    <a href="#appointment" class="btn">Book Appointment</a>
+</section>
+
+<section id="services">
+
+    <h2>🏥 Our Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+            <span>❤️</span>
+            <h3>Cardiology</h3>
+            <p>Advanced heart care and treatment.</p>
+        </div>
+
+        <div class="service-card">
+            <span>🦷</span>
+            <h3>Dental Care</h3>
+            <p>Complete dental treatment and care.</p>
+        </div>
+
+        <div class="service-card">
+            <span>🩺</span>
+            <h3>General Medicine</h3>
+            <p>Professional medical consultation.</p>
+        </div>
+
+        <div class="service-card">
+            <span>🚑</span>
+            <h3>Emergency Care</h3>
+            <p>24/7 emergency medical services.</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- Doctors -->
+<section id="doctors">
+    <h2>👨‍⚕️ Our Doctors</h2>
+
+    <input type="text" id="searchDoctor"
+           placeholder="🔍 Search doctor or specialization..."
+           onkeyup="searchDoctors()">
+
+    <div class="doctor-container">
+
+        <div class="doctor-card">
+            <div class="doctor-icon">👨‍⚕️</div>
+            <h3>Dr. Nishant Singh</h3>
+            <p>Cardiologist</p>
+            <p>Experience: 12 Years</p>
+            <p>Fee: ₹500</p>
+        </div>
+
+        <div class="doctor-card">
+            <div class="doctor-icon">👩‍⚕️</div>
+            <h3>Dr. Shagun Rajput</h3>
+            <p>Dentist</p>
+            <p>Experience: 8 Years</p>
+            <p>Fee: ₹400</p>
+        </div>
+
+        <div class="doctor-card">
+            <div class="doctor-icon">👨‍⚕️</div>
+            <h3>Dr. Yash Raj Singh</h3>
+            <p>General Physician</p>
+            <p>Experience: 10 Years</p>
+            <p>Fee: ₹300</p>
+        </div>
+
+        <div class="doctor-card">
+            <div class="doctor-icon">👩‍⚕️</div>
+            <h3>Dr. Kavita Saini</h3>
+            <p>Dermatologist</p>
+            <p>Experience: 7 Years</p>
+            <p>Fee: ₹450</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Appointment -->
+<section id="appointment">
+    <h2>📅 Book an Appointment</h2>
+
+    <form id="appointmentForm">
+
+        <label>Patient Name:</label>
+        <input type="text" id="name" required>
+
+        <label>Age:</label>
+        <input type="number" id="age" min="1" max="120" required>
+
+        <label>Phone Number:</label>
+        <input type="tel" id="phone" pattern="[0-9]{10}" required>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Select Department:</label>
+        <select id="department" required>
+            <option value="">-- Select Department --</option>
+            <option>Cardiology</option>
+            <option>Dentist</option>
+            <option>General Physician</option>
+            <option>Dermatology</option>
+        </select>
+
+        <label>Select Doctor:</label>
+        <select id="doctor" required>
+            <option value="">-- Select Doctor --</option>
+            <option>Dr. Nishant Singh</option>
+            <option>Dr. Shagun Rajput</option>
+            <option>Dr. Yash Raj Singh</option>
+            <option>Dr. Kavita Saini</option>
+        </select>
+
+        <label>Appointment Date:</label>
+        <input type="date" id="date" required>
+
+        <label>Appointment Time:</label>
+        <select id="time" required>
+            <option value="">-- Select Time --</option>
+            <option>09:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>02:00 PM</option>
+            <option>03:00 PM</option>
+            <option>04:00 PM</option>
+        </select>
+
+        <label>Payment Method:</label>
+        <select id="payment" required>
+            <option value="">-- Select Payment --</option>
+            <option>Cash</option>
+            <option>UPI</option>
+            <option>Debit/Credit Card</option>
+        </select>
+
+        <button type="submit">Book Appointment</button>
+
+    </form>
+
+    <div id="result"></div>
+</section>
+
+
+<!-- My Appointments -->
+<section id="appointments">
+    <h2>📋 My Appointments</h2>
+
+    <div id="appointmentList">
+        <p>No appointments booked yet.</p>
+    </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact">
+    <h2>📞 Contact Us</h2>
+
+    <p>📍 Moradabad, India</p>
+    <p>📞 +91 7534827133</p>
+    <p>✉️ cosmos@gmail.com</p>
+    <p>🚨 Emergency Services: 24/7</p>
+</section>
+
+
+<footer>
+    <p>© 2026 Cosmos Hospital | Hospital Appointment System</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
